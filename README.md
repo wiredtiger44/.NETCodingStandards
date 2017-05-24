@@ -66,6 +66,24 @@ Coding standards for .NET development
     /* good - name is representative of the variables representation */
     string benefitPlanTypeMedical = "Medical Plan";
     ```
+ <a name="Single character variables"></a><a name="3.2"></a>
+  - [3.1](#singlecharacter) **No Single Character Variables**: Use meaningful Names to describe variables. Use of one character varialbes should be limited to loops
+
+    > Why? Meaningful names help other developers quickly look at the code and understand the functionality. 
+
+    ```code
+    /* bad - name is not meaningful */
+    string m="Medical plan";
+    
+    /* good - name is representative of the variables representation */
+    string benefitPlanTypeMedical = "Medical Plan";
+    
+    /* good - single character used in loop */
+    for (int i = 0; i < length; i++)
+    {
+        
+    }
+    ```
 
 ## Code Styling
 <a name="NoDebuggerStatements"></a><a name="4.1"></a>
