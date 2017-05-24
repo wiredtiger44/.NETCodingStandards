@@ -12,40 +12,43 @@ Coding standards for .NET development
 
     > Why? One set of code is easier to maintain. 
 
-<a name="Re--implementation"></a><a name="1.1"></a>
-  - [1.1](#Re--implementation) **Re-implementation**: No magic numbers or magic strings
+<a name="Magic"></a><a name="1.2"></a>
+  - [1.2](#Magic) **No Magic Numbers and Strings**: Magic numbers or magic strings should be avoided if at all possible. A constant should be setup to represent the number or string.
 
-    > Why? One set of code is easier to maintain. 
+    > Why? The meaning of a magic number or magic string can get lost over time. A constant is clearer and ensures that if a change needs to be made it happens in only one spot 
 
-
+    ```code
+    /* bad  */
+    if (bnftPlanType == "Medical Plan")
+    {
+    }
+    
+    /* good */
+    string benefitPlanTypeMedical = "Medical Plan";
+    if (bnftPlanType == benefitPlanTypeMedical)
+    {
+    }
+    ```
 
 
 ## Error Handling
 <a name="swallowException"></a><a name="2.1"></a>
   - [2.1](#swallowException) **Don't Swallow Exceptions**: 
 
-    > Why? NO-ERROR suppresses errors, which can cause database inconsistency issues, memory leaks, infinite loops and more...
+    > Why? Errors should either bubble up to a common error handling routine or be logged at the time of the error. In certain cases errors can be handled but those should be very narrowly specified.
 
-    ```openedge
-    /* bad (error is suppressed, cMemberName is never assigned */
-    ASSIGN iMemberNumber = INTEGER("ABC")
-           cMemberName   = 'ABC' NO-ERROR.
-        
-    /* good (ver 1) - using structured error handling */
-    ASSIGN iMemberNumber = INTEGER("ABC")
-           cMemberName   = 'ABC'.
-    /* ... some code... */
-    CATCH eExc AS Progress.Lang.ProError:
-      MESSAGE "Error:" + eExc:GetMessage(1).
-    END.
-        
-    /* good (ver 2) - classic error handling (split safe assignment from unsafe) */
-    ASSIGN cMemberName   = 'ABC'.
-    ASSIGN iMemberNumber = INTEGER("ABC") NO-ERROR.
-    IF ERROR-STATUS:ERROR THEN
-      DO:
-        /* handle error here */
-      END.
+    ```code
+    /* bad (error is suppressed) */
+    try
+    {
+        return ExportBenefitPlan(bnftPlanSK, planPgmCode);
+    }
+    catch (Exception ex)
+    {
+    }    
+    
+    /* good - error is bubbled up to higher level */
+    return ExportBenefitPlan(bnftPlanSK, planPgmCode);
     ```
 
 ## Naming Conventions
@@ -54,10 +57,10 @@ Coding standards for .NET development
 
     > Why? Meaningful names help other developers quickly look at the code and understand the functionality. 
 
-    ```openedge
-    /* bad (error is suppressed, cMemberName is never assigned */
+    ```code
+    /* bad - name is not meaningful */
+    string mmm = "Medical Plan";
     
-    /* good (ver 1) - using structured error handling */
-        
-    
+    /* good - name is representative of the variables representation */
+    string benefitPlanTypeMedical = "Medical Plan";
     ```
