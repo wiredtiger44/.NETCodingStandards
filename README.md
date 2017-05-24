@@ -4,8 +4,8 @@ Coding standards for .NET development
 ## Table of Contents
 1. [Functionality](#functionality)
 2. [Error Handling](#error-handling)
-3. [Naming Conventions](#Naming-Conventions)
-4. [Code Styling](#Code-Styling)
+3. [Naming Conventions](#naming-conventions)
+4. [Code Styling](#code-styling)
 
 
 ## Functionality
