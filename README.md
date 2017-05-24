@@ -3,8 +3,10 @@ Coding standards for .NET development
 
 ## Table of Contents
 1. [Functionality](#functionality)
-1. [Error Handling](#error-handling)
-1. [Naming Conventions](#Naming-Conventions)
+2. [Error Handling](#error-handling)
+3. [Naming Conventions](#Naming-Conventions)
+4. [Code Styling](#Code-Styling)
+
 
 ## Functionality
 <a name="Re--implementation"></a><a name="1.1"></a>
@@ -33,7 +35,7 @@ Coding standards for .NET development
 
 ## Error Handling
 <a name="swallowException"></a><a name="2.1"></a>
-  - [2.1](#swallowException) **Don't Swallow Exceptions**: 
+  - [2.1](#swallowException) **Don't Swallow Exceptions**: Don't swallow exceptions without handling or logging them.
 
     > Why? Errors should either bubble up to a common error handling routine or be logged at the time of the error. In certain cases errors can be handled but those should be very narrowly specified.
 
@@ -53,7 +55,7 @@ Coding standards for .NET development
 
 ## Naming Conventions
 <a name="Meaningful Names"></a><a name="3.1"></a>
-  - [2.1](#meaningfulNames) **Meaningful Names**: 
+  - [3.1](#meaningfulNames) **Meaningful Names**: Use meaningful Names to describe constants, variables, and methods.
 
     > Why? Meaningful names help other developers quickly look at the code and understand the functionality. 
 
@@ -64,3 +66,8 @@ Coding standards for .NET development
     /* good - name is representative of the variables representation */
     string benefitPlanTypeMedical = "Medical Plan";
     ```
+## Code Styling
+<a name="NoDebuggerStatements"></a><a name="4.1"></a>
+  - [2.1](#NoDebuggerStatements) **No Debugger Statements**: Debugger statements should not be checked in. Use them temporarily and sparingly to track down problems.
+
+    > Why? Debugger statements can cause an application to behave differently in development versus testing.
