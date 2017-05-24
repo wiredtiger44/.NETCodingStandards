@@ -66,11 +66,6 @@ Coding standards for .NET development
     /* good - name is representative of the variables representation */
     string benefitPlanTypeMedical = "Medical Plan";
     ```
-## Code Styling
-<a name="NoDebuggerStatements"></a><a name="4.1"></a>
-  - [2.1](#NoDebuggerStatements) **No Debugger Statements**: Debugger statements should not be checked in. Use them temporarily and sparingly to track down problems.
-
-    > Why? Debugger statements can cause an application to behave differently in development versus testing.
 
 ## Code Styling
 <a name="NoDebuggerStatements"></a><a name="4.1"></a>
