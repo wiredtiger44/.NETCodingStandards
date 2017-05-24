@@ -88,14 +88,31 @@ Coding standards for .NET development
 <a name="Class names"></a><a name="3.3"></a>
   - [3.3](#ClassNames) **Class Names**: Class names should use pascal casing. Class Names should be nouns. 
 
-    > Why? Standardizing class names helps differentiate them from other types of objects.
+    > Why? Standardizing class names helps differentiate them from other types of objects. 
 
     ```code
-    /* bad - name is not pascal case and is a verb */
+    /* bad - name is not Pascal case and is a verb */
     public class exportingdownloading
     
-    /* good - name is representative of the variables representation */
+    /* good - name is Pascal case and is a noun */
     public class BenefitPlan
+    ```
+    
+    <a name="Method names"></a><a name="3.4"></a>
+  - [3.4](#methodNames) **Method Names**: Use Pascal casing for Method Names.  Method names should start with a verb and tell what it does. 
+
+    > Why? Standardizing method names helps differentiate them from other types of objects. 
+
+    ```code
+    /* bad - name is not Pascal case and does not start with verb */
+    public string benefitPlan(benefitPlanSK)
+    {
+    }
+    
+    /* good - name is Pascal case and start with verb */
+    public string GetBenefitPlan(benefitPlanSK)
+    {
+    }
     ```
 
 ## Code Styling
