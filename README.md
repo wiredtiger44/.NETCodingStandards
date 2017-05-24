@@ -67,7 +67,7 @@ Coding standards for .NET development
     string benefitPlanTypeMedical = "Medical Plan";
     ```
  <a name="Single character variables"></a><a name="3.2"></a>
-  - [3.1](#singlecharacter) **No Single Character Variables**: Use meaningful Names to describe variables. Use of one character varialbes should be limited to loops
+  - [3.2](#singlecharacter) **No Single Character Variables**: Use meaningful Names to describe variables. Use of one character variables should be limited to loops
 
     > Why? Meaningful names help other developers quickly look at the code and understand the functionality. 
 
@@ -83,6 +83,19 @@ Coding standards for .NET development
     {
         
     }
+    ```
+
+<a name="Class names"></a><a name="3.3"></a>
+  - [3.3](#ClassNames) **Class Names**: Class names should use pascal casing. Class Names should be nouns. 
+
+    > Why? Standardizing class names helps differentiate them from other types of objects.
+
+    ```code
+    /* bad - name is not pascal case and is a verb */
+    public class exportingdownloading
+    
+    /* good - name is representative of the variables representation */
+    public class BenefitPlan
     ```
 
 ## Code Styling
