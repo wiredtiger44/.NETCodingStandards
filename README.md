@@ -32,7 +32,15 @@ Coding standards for .NET development
     {
     }
     ```
+<a name="AvoidLongMethods"></a><a name="1.3"></a>
+  - [1.3](#AvoidLongMethods) **Avoid Long Methods**: Avoid writing really long methods. 
 
+    > Why? If a method is getting large, it probably is doing too much and/or multiple things.  Consider refactoring into separate methods. 
+    
+    <a name="OneFileOneClass"></a><a name="1.4"></a>
+  - [1.4](#OneFileOneClass) **One File One Class**: Do not have more than one class in a single file
+
+    > Why? A standard that has been adopted. Easier to manage source control. Easy to find class without having to know file.
 
 ## Error Handling
 <a name="swallowException"></a><a name="2.1"></a>
