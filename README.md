@@ -92,11 +92,11 @@ Coding standards for .NET development
 
     ```code
     /* bad - name is not Pascal case, is a verb and does not match file name. */
-In file exporting.cs
+    In file exporting.cs
     public class exportingdownloading
     
     /* good - name is Pascal case, is a noun and matches file name. */
-In file BenefitPlan.cs
+    In file BenefitPlan.cs
     public class BenefitPlan
     ```
     
