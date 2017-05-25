@@ -314,13 +314,13 @@ Coding standards for .NET development
     > Why? Consumers of the API will have documentation about what and how an API works.
     
     ```code
-    /* bad - several blank lines for separation */
+    /* bad - no XML Documentation */
     [HttpGet]
     public IHttpActionResult Search(string bnftName = null, string bnftCode = null, long? svcTypeSK = null)
     {
     }
     
-    /* good - only one blank line for separation */
+    /* good - XML documentation documenting method */
     /// <summary>
     /// Benefit Definition Search
     /// </summary>
