@@ -105,13 +105,32 @@ Coding standards for .NET development
 
     ```code
     /* bad - name is not Pascal case and does not start with verb */
-    public string benefitPlan(benefitPlanSK)
+    public string benefitPlan(long benefitPlanSK)
     {
     }
     
     /* good - name is Pascal case and start with verb */
-    public string GetBenefitPlan(benefitPlanSK)
+    public string GetBenefitPlan(long benefitPlanSK)
     {
+    }
+    ```
+    
+      <a name="Variable and Parameter names"></a><a name="3.5"></a>
+  - [3.5](#VariableParameterNames) **Varialbe and Parameter Names**: Use Lower Camel casing for variables and method parameters.  
+
+    > Why? Standardizing method names helps differentiate them from other types of objects. 
+
+    ```code
+    /* bad - name is not Pascal case */
+    public string benefitPlan(long benefitplansk)
+    {
+      string benefitplantype;
+    }
+    
+    /* good - name is Pascal case */
+    public string GetBenefitPlan(long benefitPlanSK)
+    {
+      string benefitPlanType;
     }
     ```
 
