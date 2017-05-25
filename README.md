@@ -54,6 +54,26 @@ Coding standards for .NET development
     return ExportBenefitPlan(bnftPlanSK, planPgmCode);
     ```
 
+<a name="TryCatchForController"></a><a name="2.2"></a>
+  - [2.2](#TryCatchForController) **Use Try Catch in Controllers**: Use try/catch at the controller level so exceptions bubble up correctly. 
+
+    > Why? Errors that are bubbled up to the controller need to be converted into API return codes (OK, Bad Message) in order to work correctly.
+
+    ```code
+    /* bad (error is thrown and not converted) */
+    return Ok(_dataCompareAtlasBLL.ComparePlan(bnftPlanSK1, bnftPlanSK2));
+    
+    /* good - error is bubbled up to higher level */
+    try
+    {
+        return Ok(_dataCompareAtlasBLL.ComparePlan(bnftPlanSK1, bnftPlanSK2));
+    }
+    catch (Exception ex)
+    {
+        return BadRequest(_exceptionResponseGenerator.GetExceptionMessage(ex));
+    }
+    ```
+
 ## Naming Conventions
 <a name="Meaningful Names"></a><a name="3.1"></a>
   - [3.1](#meaningfulNames) **Meaningful Names**: Use meaningful Names to describe constants, variables, and methods.
