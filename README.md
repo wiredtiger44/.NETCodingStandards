@@ -74,6 +74,11 @@ Coding standards for .NET development
     }
     ```
 
+<a name="DetailedErrorMessages"></a><a name="2.3"></a>
+  - [2.3](#DetailedErrorMessages) **Detailed Error Messages**: Error messages should provide enough detail so that the user knows what the problem is and can identify the record causing the problem.
+
+    > Why? Errors that aren't detailed confuse users and can make applications hard to debug.
+
 ## Naming Conventions
 <a name="Meaningful Names"></a><a name="3.1"></a>
   - [3.1](#meaningfulNames) **Meaningful Names**: Use meaningful Names to describe constants, variables, and methods.
