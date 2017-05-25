@@ -6,6 +6,7 @@ Coding standards for .NET development
 2. [Error Handling](#error-handling)
 3. [Naming Conventions](#naming-conventions)
 4. [Code Styling](#code-styling)
+5. [Commenting](#commenting)
 
 
 ## Functionality
@@ -240,3 +241,35 @@ Coding standards for .NET development
 
     > Why? Ensures consistent formatting of the code levels. 
     
+## Commenting
+<a name="CleanReadableCodeLessComments"></a><a name="5.1"></a>
+  - [5.1](#CleanReadableCodeLessComments) **Clean Readable Code Less Comments**: Write clean, readable, code in such a way that it doesn’t need comments to understand.
+
+    > Why? Comments are not a substitute for clean, readable, efficient code.
+
+
+<a name="XMLDocumentation"></a><a name="5.2"></a>
+  - [5.2](#XMLDocumentation) **XML Documentation for API End Points**: For controllers, add XML documentation to each API endpoint with “///”. Describe what the API endpoint expects and what it returns.
+
+    > Why? Consumers of the API will have documentation about what and how an API works.
+    
+    ```code
+    /* bad - several blank lines for separation */
+    [HttpGet]
+    public IHttpActionResult Search(string bnftName = null, string bnftCode = null, long? svcTypeSK = null)
+    {
+    }
+    
+    /* good - only one blank line for separation */
+    /// <summary>
+    /// Benefit Definition Search
+    /// </summary>
+    /// <param name="bnftName">the bnft name</param>
+    /// <param name="bnftCode">the bnft Code</param>
+    /// <param name="svcTypeSK">the Service Type SK</param>
+    /// <returns>list of Benefits with their optional Service Types</returns>
+    [HttpGet]
+    public IHttpActionResult Search(string bnftName = null, string bnftCode = null, long? svcTypeSK = null)
+    {
+    }
+    ```
