@@ -136,8 +136,8 @@ Coding standards for .NET development
     }
     ```
     
-      <a name="Interface names"></a><a name="3.6"></a>
-  - [3.6](#interfaceNames) **Interface Names**: Use Pascal casing for Interface Names and begin with an "I" Prefix. Interface names should be nouns.
+      <a name="Interface, View Model, repository, BLL, DAL, Controller names"></a><a name="3.6"></a>
+  - [3.6](#interfaceNames) **Interface, View Model, repository, BLL, DAL, Controller Names**: Use Pascal casing and begin with a prefix for the following type of class: Interface(I). Use Pascal casing and end with a Suffix for the following types of classes: ViewModel ("VM"), Repository ("Repository"), BLL ("BLL"), and Controller ("Controller")
 
     > Why? Standardizing method names helps differentiate them from other types of objects. 
 
@@ -147,11 +147,22 @@ Coding standards for .NET development
     {
     }
     
+    /* bad - name is not Pascal case, does not end with "BLL" */
+    public class businesslayerBenefitPlan
+    {
+    }
+    
     /* good - name is Pascal case , starts with an "I", and is a noun */
     public interface IBenefitPlan
     {
     }
+    
+    /* good - name is Pascal case, ends with "BLL" */
+    public class BenefitPlanBLL
+    {
+    }
     ```
+    
     <a name="Boolean/Bit variables"></a><a name="3.7"></a>
   - [3.7](#VariableParameterNames) **Boolean/Bit Variable Names**: Use Lower Camel casing for variables and method parameters. Prefix with "is" or similar.
 
