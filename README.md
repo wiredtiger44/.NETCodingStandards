@@ -116,18 +116,18 @@ Coding standards for .NET development
     ```
     
       <a name="Variable and Parameter names"></a><a name="3.5"></a>
-  - [3.5](#VariableParameterNames) **Varialbe and Parameter Names**: Use Lower Camel casing for variables and method parameters.  
+  - [3.5](#VariableParameterNames) **Variable and Parameter Names**: Use Lower Camel casing for variables and method parameters.  
 
     > Why? Standardizing method names helps differentiate them from other types of objects. 
 
     ```code
-    /* bad - name is not Pascal case */
+    /* bad - name is not Camel case */
     public string benefitPlan(long benefitplansk)
     {
       string benefitplantype;
     }
     
-    /* good - name is Pascal case */
+    /* good - name is Camel case */
     public string GetBenefitPlan(long benefitPlanSK)
     {
       string benefitPlanType;
@@ -150,7 +150,20 @@ Coding standards for .NET development
     {
     }
     ```
+    <a name="Boolean/Bit varialbes"></a><a name="3.7"></a>
+  - [3.7](#VariableParameterNames) **Boolean/Bit Variable Names**: Use Lower Camel casing for variables and method parameters. Prefix with "is" or similar.
 
+    > Why? Standardizing method names helps differentiate them from other types of objects. The "is" prefix makes it clear what value is true and what value is false.
+
+    ```code
+    /* bad - name is not lower Camel case and is not prefixed with "is" or similar */
+    bool family;
+    
+    
+    /* good - name is lower Camel case and is prefixed with "is" or similar */
+    bool isMemberOfFamily;
+    ```
+    
 ## Code Styling
 <a name="NoDebuggerStatements"></a><a name="4.1"></a>
   - [4.1](#NoDebuggerStatements) **No Debugger Statements**: Debugger statements should not be checked in. Use them temporarily and sparingly to track down problems.
