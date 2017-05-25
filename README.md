@@ -41,6 +41,33 @@ Coding standards for .NET development
   - [1.4](#OneFileOneClass) **One File One Class**: Do not have more than one class in a single file
 
     > Why? A standard that has been adopted. Easier to manage source control. Easy to find class without having to know file.
+    
+      <a name="ControllersShouldBeFocused"></a><a name="1.5"></a>
+  - [1.5](#ControllersShouldBeFocused) **Focused Controllers**: Controllers should have a focus and not reference various things.  For example:  The PharmacyTypesController should only be focused on PharmacyTypes.
+
+    > Why? A standard that has been adopted in the industry for API architecture. 
+
+  <a name="InvalidParameters"></a><a name="1.6"></a>
+  - [1.5](#InvalidParameters) **Invalid Parameters**: Handle invalid parameter values early in methods.
+
+    > Why? The sooner a bad parameter is handled the less risk that the bad paramater could cause harm in the code.
+    
+     ```code
+    /* bad - invalid parameter is not handled */
+    public string GetBenefitPlanTotal(long benefitPlanSubtotal)
+    {
+      return benefitPlanSubtotal;
+    }
+    
+    /* good - invalid parameter is handled */
+    public string GetBenefitPlanTotal(long benefitPlanSubtotal)
+    {
+          if(benefitPlanSubtotal < 0)
+          {
+              return BadRequest("Subtotal should be a positive number");
+          }
+    }
+    ```
 
 ## Error Handling
 <a name="swallowException"></a><a name="2.1"></a>
