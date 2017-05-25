@@ -223,3 +223,9 @@ Coding standards for .NET development
 
     return benefitPlantype + benefitPlanType2;
     ```
+
+<a name="UseVisualStudioFormatDocument"></a><a name="4.5"></a>
+  - [4.5](#UseVisualStudioFormatDocument) **Use Visual Studio Format Document**: Use Visual Studio Format Document functionality (Ctrl + K, Ctrl + D) to format files. 
+
+    > Why? Ensures consistent formatting of the code levels. 
+    
