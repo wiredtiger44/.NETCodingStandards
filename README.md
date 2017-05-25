@@ -203,7 +203,7 @@ Coding standards for .NET development
 <a name="ExcessiveBlankLines"></a><a name="4.4"></a>
   - [4.4](#ExcessiveBlankLines) **Excessive Blank Lines**: Don’t use excessive blank lines to separate logical groups of code.  The suggestion is 1 blank line.
 
-    > Why? Tabs are more efficient... they just are. See this clip from Silicon Valley (https://m.youtube.com/watch?v=SsoOG6ZeyUI)
+    > Why? Excessive blanks lines are inconsistent and annoying.
     
     ```code
     /* bad - several blank lines for separation */
