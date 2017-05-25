@@ -86,15 +86,17 @@ Coding standards for .NET development
     ```
 
 <a name="Class names"></a><a name="3.3"></a>
-  - [3.3](#ClassNames) **Class Names**: Class names should use pascal casing. Class Names should be nouns. 
+  - [3.3](#ClassNames) **Class Names**: Class names should use pascal casing. Class Names should be nouns. ClassNames should match file name.
 
     > Why? Standardizing class names helps differentiate them from other types of objects. 
 
     ```code
-    /* bad - name is not Pascal case and is a verb */
+    /* bad - name is not Pascal case, is a verb and does not match file name. */
+In file exporting.cs
     public class exportingdownloading
     
-    /* good - name is Pascal case and is a noun */
+    /* good - name is Pascal case, is a noun and matches file name. */
+In file BenefitPlan.cs
     public class BenefitPlan
     ```
     
@@ -150,7 +152,7 @@ Coding standards for .NET development
     {
     }
     ```
-    <a name="Boolean/Bit varialbes"></a><a name="3.7"></a>
+    <a name="Boolean/Bit variables"></a><a name="3.7"></a>
   - [3.7](#VariableParameterNames) **Boolean/Bit Variable Names**: Use Lower Camel casing for variables and method parameters. Prefix with "is" or similar.
 
     > Why? Standardizing method names helps differentiate them from other types of objects. The "is" prefix makes it clear what value is true and what value is false.
