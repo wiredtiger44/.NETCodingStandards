@@ -133,6 +133,23 @@ Coding standards for .NET development
       string benefitPlanType;
     }
     ```
+    
+      <a name="Interface names"></a><a name="3.6"></a>
+  - [3.6](#interfaceNames) **Interface Names**: Use Pascal casing for Interface Names and begin with an "I" Prefix. Interface names should be nouns.
+
+    > Why? Standardizing method names helps differentiate them from other types of objects. 
+
+    ```code
+    /* bad - name is not Pascal case, does not start with "I", and is not a noun */
+    public interface processing
+    {
+    }
+    
+    /* good - name is Pascal case , starts with an "I", and is a noun */
+    public interface IBenefitPlan
+    {
+    }
+    ```
 
 ## Code Styling
 <a name="NoDebuggerStatements"></a><a name="4.1"></a>
