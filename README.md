@@ -252,7 +252,7 @@ Coding standards for .NET development
 <a name="NoCommentedCode"></a><a name="4.2"></a>
   - [4.2](#NoCommentedCode) **No Commented Code**: Commented code should not be checked in. 
 
-    > Why? Commented code can be confusing. History of code is kept in source control so commented code is not necessary.
+    > Why? Commented code can be confusing. History of code is kept in source control so commented code is not necessary. Comments that descirbe the functionality are still encouraged. 
 
     ```code
     /* bad - a bunch of commented code */
@@ -267,6 +267,7 @@ Coding standards for .NET development
     }
     
     /* good - name is representative of the variables representation */
+    // check to see if the benefit plan type is Medical Plan
     string benefitPlanTypeMedical = "Medical Plan";
     if (bnftPlanType == benefitPlanTypeMedical)
     {
@@ -305,6 +306,11 @@ Coding standards for .NET development
   - [4.5](#UseVisualStudioFormatDocument) **Use Visual Studio Format Document**: Use Visual Studio Format Document functionality (Ctrl + K, Ctrl + D) to format files. 
 
     > Why? Ensures consistent formatting of the code levels. 
+
+a name="RemoveUnusedCode"></a><a name="4.6"></a>
+  - [4.6](#RemoveUnusedCode) **Remove Unused Code**: Code that is no longer used should be removed. Unused references should be cleaned up.
+
+    > Why? Code that no longer is used still may need to be maintained. Less confusion if code is removed.
     
 ## Commenting
 <a name="CleanReadableCodeLessComments"></a><a name="5.1"></a>
