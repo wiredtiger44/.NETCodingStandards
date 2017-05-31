@@ -18,7 +18,7 @@ Coding standards for .NET development
 <a name="Magic"></a><a name="1.2"></a>
   - [1.2](#Magic) **No Magic Numbers and Strings**: Magic numbers or magic strings should be avoided if at all possible. A constant should be setup to represent the number or string.
 
-    > Why? The meaning of a magic number or magic string can get lost over time. A constant is clearer and ensures that if a change needs to be made it happens in only one spot 
+    > Why? The meaning of a magic number or magic string can get lost over time. A constant or enum is clearer and ensures that if a change needs to be made it happens in only one spot 
 
     ```code
     /* bad  */
@@ -40,7 +40,7 @@ Coding standards for .NET development
     <a name="OneFileOneClass"></a><a name="1.4"></a>
   - [1.4](#OneFileOneClass) **One File One Class**: Do not have more than one class in a single file
 
-    > Why? A standard that has been adopted. Easier to manage source control. Easy to find class without having to know file.
+    > Why? This is a standard that has been adopted by the team. Makes source control easier to manage (a check out in one file has less impact).  Easier to find class without having to know file.
     
       <a name="ControllersShouldBeFocused"></a><a name="1.5"></a>
   - [1.5](#ControllersShouldBeFocused) **Focused Controllers**: Controllers should have a focus and not reference various things.  For example:  The PharmacyTypesController should only be focused on PharmacyTypes.
@@ -113,6 +113,11 @@ Coding standards for .NET development
   - [2.3](#DetailedErrorMessages) **Detailed Error Messages**: Error messages should provide enough detail so that the user knows what the problem is and can identify the record causing the problem.
 
     > Why? Errors that aren't detailed confuse users and can make applications hard to debug.
+    
+<a name="ErrorMessagesSecurity"></a><a name="2.4"></a>
+  - [2.4](#ErrorMessagesSecurity) **Error Message Security**: Care should be taken to make sure Error messages don't contain information that could be helpful in breaking security.
+
+    > Why? Providing too much detail or specific information in an error is a security concern.  Limit the amount of detail displayed in a message for privacy.  Limit the type of information provided based on environment.  For example, more in Dev, less in Prod.
 
 ## Naming Conventions
 <a name="Meaningful Names"></a><a name="3.1"></a>
